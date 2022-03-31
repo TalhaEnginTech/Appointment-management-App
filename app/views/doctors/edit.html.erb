@@ -1,0 +1,12 @@
+
+<%= form_with model: @doctor do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %> <br />
+  <%= f.label :email %>
+  <%= f.email_field :email %> <br />
+  <%= f.label :cnic %>
+  <%= f.text_field :cnic %> <br />
+  <%= f.label :specialization %>
+  <%= f.select :spec, options_for_select([ "Dermatologist", "Dentist", "Cardiologist", "Physio-therapist" ])%> </br>
+  <%= f.submit "Submit", class: "btn btn-submit" %>
+<%end%>

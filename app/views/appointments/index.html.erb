@@ -1,0 +1,26 @@
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Patient's Name</th>
+    <th>Date</th>
+    <th>Time Slot</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+<% @appointments.each_with_index  do |a, index| %>
+  <tr>
+    <td><%= index + 1 %></td>
+    <td><%= a.patient.name %></td>
+    <td><%= a.appointment_date.strftime("%m/%d/%Y") %></td>
+    <td><%= a.appointment_date.strftime("%r") %></td>
+    <td><%= link_to 'Show', appointment_path(a), class:"btn btn-info" %></td>
+    <td><%= link_to 'Edit', edit_appointment_path(a), class:"btn btn-info" %></td>
+  </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%=link_to 'Add New', new_appointment_path, class: "btn btn-info" %>

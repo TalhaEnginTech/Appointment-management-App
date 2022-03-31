@@ -1,0 +1,27 @@
+
+<%= form_with model: @doctor, url:doctors_path do |f| %>
+  <div class="form-group row">
+      <div class="form-group col-md-6">
+  <%= f.label :name %>
+  <%= f.text_field :name, class:"form-control" %>
+      </div>
+
+      <div class="form-group col-md-6">
+  <%= f.label :email %>
+  <%= f.email_field :email, class:"form-control"%>
+      </div>
+      <div class="form-group col-md-6">
+  <%= f.label :cnic %>
+  <%= f.text_field :cnic, class:"form-control" %>
+      </div>
+
+      <div class="form-group col-md-6">
+  <%= f.label :specialization %>
+  <%= f.select :spec,  options_for_select([ "Dermatologist", "Dentist", "Cardiologist", "Physio-therapist" ]), class:"form-control"%>
+      </div>
+  </div>
+
+  <%= f.submit "submit", class: "btn btn-submit" %>
+<%end%>
+
+
